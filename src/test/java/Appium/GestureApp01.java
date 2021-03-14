@@ -20,12 +20,13 @@ public class GestureApp01 {
         desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "AndroidEmulator");
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
         desiredCapabilities.setCapability(MobileCapabilityType.APP, "/Users/mehmetaliayyildiz/IdeaProjects/mobileTesting/src/Apps/GestureTool.apk");
-        desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET,true);
+      //  desiredCapabilities.setCapability("appPAckage","com.google.android.permissioncontroller");
+     //   desiredCapabilities.setCapability("appActivity","com.android.packageinstaller.permission.ui.ReviewPermissionsActivity");
+        desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET,false);
         desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,15);
         AndroidDriver<WebElement> driver  = new AndroidDriver<WebElement>(new URL("http://0.0.0.0:4723/wd/hub"),desiredCapabilities);
 
         Thread.sleep(5000);
-
         /*
 lunch GestureTool app
 click addGesture button
@@ -33,6 +34,10 @@ send text to name box "testing"
 click done
 verify testing gesture is created
  */
+//        driver.findElementByXPath("//android.widget.Button[@text='CONTINUE']").click();
+//        Thread.sleep(3000);
+//        driver.findElementByXPath("//android.widget.Button[@text='OK']").click();
+
         // driver.findElement(By.id("com.davemac327.gesture.tool:id/addButton")).click();
        // driver.findElementById("com.davemac327.gesture.tool:id/addButton").click();
         driver.findElementByXPath("//android.widget.Button[@text='Add gesture']").click();

@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -34,19 +35,36 @@ public class GestureApp02 {
         use list
          */
 
-        List<WebElement> buttons = driver.findElementsByXPath("//android.widget.Button");
-        System.out.println(buttons.size()); //3
+//        List<WebElement> buttons = driver.findElementsByXPath("//android.widget.Button");
+//        System.out.println(buttons.size()); //3
+//
+//       // buttons.get(3).click();
+//        for (WebElement button : buttons) {
+//            if (button.getText().equals("Reload")){
+//                System.out.println("now clicking "+button.getText()+" button");
+//                button.click();
+//                break;
+//            }
+//        }
+//       WebElement titleText = driver.findElementById("android:id/title");
+//        Assert.assertEquals("Test a gesture",titleText.getText());
 
-       // buttons.get(3).click();
-        for (WebElement button : buttons) {
-            if (button.getText().equals("Reload")){
-                System.out.println("now clicking "+button.getText()+" button");
-                button.click();
-                break;
-            }
-        }
-       WebElement titleText = driver.findElementById("android:id/title");
-        Assert.assertEquals("Test a gesture",titleText.getText());
+        driver.findElementById("com.davemac327.gesture.tool:id/addButton").click();
+Thread.sleep(3000);
+        driver.findElementById("com.davemac327.gesture.tool:id/gesture_name").sendKeys("testing");
+        Thread.sleep(3000);
+        driver.findElementById("com.davemac327.gesture.tool:id/gestures_overlay").click();
+        Thread.sleep(3000);
+        driver.findElementById("com.davemac327.gesture.tool:id/done").click();
+        Thread.sleep(3000);
+        String title = "Gesture tool";
+        Thread.sleep(3000);
+        WebElement actualTitle = driver.findElement(By.id("android:id/title"));
+
+        Assert.assertEquals(title,actualTitle.getText());
+
+
+
 
 
     }
