@@ -18,10 +18,10 @@ public class Base {
 
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"7.0");
+        desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
         desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"1fd655780409");
-        desiredCapabilities.setCapability(MobileCapabilityType.APP,"/Users/mehmetaliayyildiz/Desktop/appium/androidApp/GestureTool.apk");
-        desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET,"true");
+        desiredCapabilities.setCapability(MobileCapabilityType.APP,"/Users/mehmetaliayyildiz/IdeaProjects/mobileTesting/src/Apps/apiDemos.apk");
+        desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET,true);
 
         URL url = new URL("http://127.0.0.1:4723/wd/hub"); //http://localhost:4723/wd/hub
         AndroidDriver<WebElement> driver = new AndroidDriver<>(url,desiredCapabilities);
