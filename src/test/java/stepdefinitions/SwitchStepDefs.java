@@ -6,12 +6,14 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.AllPages;
 import pages.android.ApiDemosPage;
+import pages.android.DragDropPage;
 import pages.android.HomePage;
 import pages.android.PreferencePage;
 
 public class SwitchStepDefs {
 
     AllPages allPages = new AllPages();
+
     @Given("user clicks API Demos page")
     public void user_clicks_api_demos_page() {
         allPages.homePage().apiDemosPage.click();
@@ -67,4 +69,6 @@ public class SwitchStepDefs {
         allPages.preferencePage().preferenceFromCodePage.click();
 
     }
+
+
 }

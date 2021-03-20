@@ -15,4 +15,7 @@ public class ViewsPage {
     }
     @AndroidFindBy(xpath = "//*[@text='Drag and Drop']")
     public WebElement dragDropButton;
+
+    @AndroidFindBy(xpath = "//*[@text='Date Widgets']")
+    public WebElement dateWidgets;
 }
