@@ -16,6 +16,7 @@ public class AllPages {
     private PreferencesFromCodePage preferencesFromCodePage;
     private DragDropPage dragDropPage;
     private DateWidgetsPage dateWidgetsPage;
+    private TextSwitcherPage textSwitcherPage;
 
 
 
@@ -66,6 +67,12 @@ public class AllPages {
         if(dateWidgetsPage == null){
             dateWidgetsPage = new DateWidgetsPage();
         }return dateWidgetsPage;
+    }
+
+    public TextSwitcherPage textSwitcherPage(){
+        if (textSwitcherPage == null){
+            textSwitcherPage = new TextSwitcherPage();
+        }return textSwitcherPage;
     }
 
 

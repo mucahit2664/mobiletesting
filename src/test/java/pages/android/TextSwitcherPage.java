@@ -8,14 +8,14 @@ import utilities.Driver;
 
 import java.time.Duration;
 
-public class DragDropPage {
-    public DragDropPage(){
+public class TextSwitcherPage {
+    public TextSwitcherPage(){
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver(), Duration.ofSeconds(30)),this);
     }
-    @AndroidFindBy(id = "com.touchboarder.android.api.demos:id/drag_dot_1")
-    public WebElement firstButton;
-    @AndroidFindBy(id = "com.touchboarder.android.api.demos:id/drag_dot_3")
-    public WebElement thirdButton;
-    @AndroidFindBy(id = "com.touchboarder.android.api.demos:id/drag_text")
-    public WebElement actualText;
+    @AndroidFindBy(id = "com.touchboarder.android.api.demos:id/next")
+    public WebElement nextButton;
+
+    @AndroidFindBy(className = "android.widget.TextView")
+    public WebElement actualDigitValue;
+
 }

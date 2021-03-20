@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 import java.time.Duration;
+import java.util.List;
 
 public class ViewsPage {
     public ViewsPage(){
@@ -18,4 +19,19 @@ public class ViewsPage {
 
     @AndroidFindBy(xpath = "//*[@text='Date Widgets']")
     public WebElement dateWidgets;
+
+    @AndroidFindBy(xpath = "//*[@text='Visibility']")
+    public List<WebElement> visibility;
+
+    @AndroidFindBy(xpath = "//*[@text='Expandable Lists']")
+    public WebElement expandableLists;
+
+    @AndroidFindBy(xpath = "//*[@text='1. Custom Adapter']")
+    public WebElement customAdapter;
+
+    @AndroidFindBy(xpath = "//*[@text='People Names']")
+    public WebElement peopleNames;
+
+    @AndroidFindBy(xpath = "//*[@text='Arnold']")
+    public WebElement arnold;
 }
