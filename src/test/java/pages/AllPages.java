@@ -1,6 +1,10 @@
 package pages;
 
 import pages.android.*;
+import pages.ios.AlertViewsPage;
+import pages.ios.MainPage;
+import pages.ios.PickerViewPage;
+import pages.ios.SwitchesPage;
 
 
 public class AllPages {
@@ -17,7 +21,11 @@ public class AllPages {
     private DragDropPage dragDropPage;
     private DateWidgetsPage dateWidgetsPage;
     private TextSwitcherPage textSwitcherPage;
-
+    private MainPage mainPage;
+    private AlertViewsPage alertViewsPage;
+    private SwitchesPage switchesPage;
+    private PickerViewPage pickerViewPage;
+private SpinnerPage spinnerPage;
 
 
     //create public method with class return type and put  if condition and if object is equal to null create new object and return it
@@ -75,6 +83,35 @@ public class AllPages {
         }return textSwitcherPage;
     }
 
+    public MainPage mainPage(){
+        if(mainPage == null){
+            mainPage = new MainPage();
+        }return mainPage;
+    }
+
+    public AlertViewsPage alertViewsPage(){
+        if (alertViewsPage == null){
+            alertViewsPage = new AlertViewsPage();
+        }return alertViewsPage;
+    }
+
+    public SwitchesPage switchesPage(){
+        if (switchesPage == null){
+            switchesPage = new SwitchesPage();
+        }return switchesPage;
+    }
+
+    public PickerViewPage pickerViewPage(){
+        if (pickerViewPage == null){
+            pickerViewPage = new PickerViewPage();
+        }return  pickerViewPage;
+    }
+
+    public SpinnerPage spinnerPage(){
+        if (spinnerPage == null){
+            spinnerPage = new SpinnerPage();
+        }return spinnerPage;
+    }
 
 
 }

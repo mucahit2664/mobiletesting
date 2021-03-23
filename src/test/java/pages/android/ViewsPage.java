@@ -26,6 +26,9 @@ public class ViewsPage {
     @AndroidFindBy(xpath = "//*[@text='Expandable Lists']")
     public WebElement expandableLists;
 
+    @AndroidFindBy(xpath = "//*[@text='Spinner']")
+    public WebElement spinner;
+
     @AndroidFindBy(xpath = "//*[@text='1. Custom Adapter']")
     public WebElement customAdapter;
 

@@ -1,6 +1,7 @@
 package utilities;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSElement;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -26,5 +27,15 @@ public class ReusableMethods {
         }
     }
 
+    //ios pages
+    public static void clickOnPageIOSDevice(String pageName){
+        List<IOSElement> pages = Driver.getAppiumDriver().findElementsByXPath("//XCUIElementTypeStaticText[@name='"+pageName+"']");
+          for (IOSElement page : pages){
+              if (page.getText().equals(pageName)){
+                  page.click();
+                  break;
+              }
+        }
+    }
 
 }

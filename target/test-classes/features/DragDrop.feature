@@ -6,3 +6,4 @@
       Given user click on Drag and Drop Page
       And user drag first circle and drop third one
       Then verify text is displayed
+      Then take the screenshot

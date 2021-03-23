@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.functions.ExpectedCondition;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
@@ -8,6 +9,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.AllPages;
 import pages.android.HomePage;
 import pages.android.PreferencePage;
@@ -50,7 +53,7 @@ public class DragDropStepDefs {
     }
 
     @Given("user drag first circle and drop it on self")
-    public void userDragFirstCircleAndDropItOnSelf() {
+    public void userDragFirstCircleAndDropItOnSelf() throws InterruptedException {
         Dimension dimension = Driver.getAppiumDriver().manage().window().getSize();
 
         int end_y = (int) (dimension.width * 0.2);
@@ -61,10 +64,14 @@ public class DragDropStepDefs {
         touchAction.press(ElementOption.element(allPages.dragDropPage().firstButton)).
                 waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1))).
                 moveTo(PointOption.point(end_x, end_y)).release().perform();
+        Thread.sleep(5000);
     }
 
     @Then("verify the text contains {string}")
-    public void verifyTheTextContains(String expectedText) {
+    public void verifyTheTextContains(String expectedText) throws InterruptedException {
+        Thread.sleep(5000);
+        WebDriverWait wait = new WebDriverWait(Driver.getAppiumDriver(),10);
+        wait.until(ExpectedConditions.visibilityOf(allPages.dragDropPage().actualText));
         Assert.assertTrue(allPages.dragDropPage().actualText.getText().contains(expectedText));
     }
 
