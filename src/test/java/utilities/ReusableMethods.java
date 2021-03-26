@@ -1,6 +1,7 @@
 package utilities;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.ios.IOSElement;
 import org.openqa.selenium.WebElement;
 
@@ -18,9 +19,11 @@ public class ReusableMethods {
 
     //pages
     public static void goToPage(String pageName) {
-        List<WebElement> pages = Driver.getAppiumDriver().findElementsByClassName("android.widget.TextView");
-        for (WebElement page : pages) {
+        AndroidDriver driver = (AndroidDriver) Driver.getAppiumDriver();
+        List<AndroidElement> pages = driver.findElementsByXPath("//android.widget.TextView");
+        for (AndroidElement page : pages) {
             if (page.getText().equals(pageName)) {
+                System.out.println(page.getText());
                 page.click();
             }
             break;
